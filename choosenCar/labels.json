@@ -1,0 +1,10 @@
+{
+  "car1_B1234ABC.jpg": {
+    "plat_nomor": "B1234ABC",
+    "vehicle_type": "Mobil"
+  },
+  "car2_D5678XYZ.png": {
+    "plat_nomor": "D5678XYZ",
+    "vehicle_type": "Mobil"
+  }
+}

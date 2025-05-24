@@ -1,0 +1,206 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #5cb85c;
+}
+
+header h1 {
+  color: #3a87ad; /* Darker blue for heading */
+  margin-bottom: 0.5em;
+}
+
+header p {
+  color: #555;
+  font-size: 1.1em;
+}
+
+.main-controls {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.upload-section,
+.results-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+h2 {
+  color: #5cb85c; /* Green accent */
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.file-upload-label {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #5cb85c;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.file-upload-label:hover {
+  background-color: #4cae4c;
+}
+
+input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+#imagePreview {
+  max-width: 100%;
+  max-height: 200px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block; /* Centering and proper display */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.action-buttons button {
+  background-color: #3a87ad; /* Bootstrap info blue */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.action-buttons button:hover {
+  background-color: #2d6a88;
+  transform: translateY(-1px);
+}
+.action-buttons button:active {
+  transform: translateY(0px);
+}
+
+.status-message {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.status-message.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  border: 1px solid #d6e9c6;
+}
+
+.status-message.error {
+  background-color: #f2dede;
+  color: #a94442;
+  border: 1px solid #ebccd1;
+}
+
+.status-message.loading {
+  background-color: #d9edf7;
+  color: #31708f;
+  border: 1px solid #bce8f1;
+}
+
+.result-box {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #eef;
+  border: 1px solid #dde;
+  border-radius: 4px;
+}
+.result-box h3 {
+  margin-top: 0;
+  color: #2d6a88;
+}
+
+.parking-info {
+  margin-top: 30px;
+}
+
+#btnRefreshData {
+  background-color: #f0ad4e; /* Orange/Warning */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+#btnRefreshData:hover {
+  background-color: #ec971f;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tbody tr:hover {
+  background-color: #f1f1f1;
+}

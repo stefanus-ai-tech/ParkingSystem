@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Parkir Cerdas</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Sistem Parkir Cerdas</h1>
+        <p>
+          Unggah gambar kendaraan untuk proses masuk/keluar dan cek akurasi
+          deteksi.
+        </p>
+      </header>
+
+      <section class="main-controls">
+        <div class="upload-section">
+          <h2>Proses Kendaraan</h2>
+          <p>
+            Unggah gambar baru atau pilih gambar yang sudah dilabeli untuk uji
+            akurasi.
+          </p>
+
+          <label for="labeledImageSelect"
+            >Pilih Gambar Terlabel (Opsional):</label
+          >
+          <select id="labeledImageSelect">
+            <option value="none">-- Unggah Gambar Baru --</option>
+          </select>
+
+          <label for="imageUpload" class="file-upload-label">
+            <span id="fileUploadText">Pilih File Gambar Baru...</span>
+            <input
+              type="file"
+              id="imageUpload"
+              accept="image/jpeg, image/png, image/gif"
+            />
+          </label>
+          <img
+            id="imagePreview"
+            src="#"
+            alt="Pratinjau Gambar"
+            style="display: none"
+          />
+
+          <div class="action-buttons">
+            <button id="btnVehicleIn">Kendaraan Masuk</button>
+            <button id="btnVehicleOut">Kendaraan Keluar</button>
+          </div>
+        </div>
+
+        <div class="results-section">
+          <h2>Hasil Proses</h2>
+          <div id="statusMessage" class="status-message"></div>
+          <div id="groqResult" class="result-box" style="display: none">
+            <h3>Hasil Deteksi Groq:</h3>
+            <p><strong>Plat Nomor:</strong> <span id="groqPlat"></span></p>
+            <p><strong>Jenis Kendaraan:</strong> <span id="groqType"></span></p>
+          </div>
+          <div id="accuracyResult" class="result-box" style="display: none">
+            <h3>Hasil Akurasi:</h3>
+            <p><strong>Plat Sebenarnya:</strong> <span id="truePlat"></span></p>
+            <p>
+              <strong>Jenis Sebenarnya:</strong> <span id="trueType"></span>
+            </p>
+            <p>
+              <strong>Akurasi Plat:</strong> <span id="plateAccuracy"></span>%
+            </p>
+            <p>
+              <strong>Akurasi Jenis:</strong> <span id="typeAccuracy"></span>%
+            </p>
+            <p>
+              <strong>Akurasi Keseluruhan:</strong>
+              <span id="overallAccuracy"></span>%
+            </p>
+            <p id="accuracyMessage"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="parking-info">
+        <h2>Informasi Parkir</h2>
+        <button id="btnRefreshData">Refresh Data Parkir</button>
+        <h3>Kendaraan Sedang Parkir</h3>
+        <table id="currentParkingTable">
+          <thead>
+            <tr>
+              <th>Plat Nomor</th>
+              <th>Jenis</th>
+              <th>Waktu Masuk</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <h3>Riwayat Parkir (Kendaraan Keluar)</h3>
+        <table id="parkingHistoryTable">
+          <thead>
+            <tr>
+              <th>Plat Nomor</th>
+              <th>Jenis</th>
+              <th>Waktu Masuk</th>
+              <th>Waktu Keluar</th>
+              <th>Durasi (Menit)</th>
+              <th>Biaya (Rp)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </div>
+
+    <script src="/static/script.js"></script>
+  </body>
+</html>

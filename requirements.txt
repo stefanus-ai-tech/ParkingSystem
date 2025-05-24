@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+groq
+aiofiles  # For serving static files and async file operations
+Pillow    # For image operations if needed, good to have
+python-multipart # For file uploads
