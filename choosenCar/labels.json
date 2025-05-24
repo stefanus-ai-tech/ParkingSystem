@@ -1,10 +1,118 @@
 {
-  "car1_B1234ABC.jpg": {
-    "plat_nomor": "B1234ABC",
+  "11b155ab5b3331cf_jpg.rf.337311fe1741878589b3954bee0547f5.jpg": {
+    "plat_nomor": "CY-110-KS",
     "vehicle_type": "Mobil"
   },
-  "car2_D5678XYZ.png": {
-    "plat_nomor": "D5678XYZ",
+  "11f80fda2c38011c_jpg.rf.46f9e991992916fd43ee643794a15634.jpg": {
+    "plat_nomor": "990-XMK",
+    "vehicle_type": "Mobil"
+  },
+  "12b7ea40074d3b20_jpg.rf.1d9f76176d57b1dfce50f79ed0082b87.jpg": {
+    "plat_nomor": "0695DVH",
+    "vehicle_type": "Mobil"
+  },
+  "15a51e29f5ceffd8_jpg.rf.b7fbeeef929ab35ccc982de040787e4a.jpg": {
+    "plat_nomor": "219108",
+    "vehicle_type": "Mobil"
+  },
+  "16c15b29b30148c2_jpg.rf.2f2dd33f4c36d5984bac383e9c9c2972.jpg": {
+    "plat_nomor": "10.000.51",
+    "vehicle_type": "Mobil"
+  },
+  "19ff847d0cd1c5ec_jpg.rf.cb12b9c6bd8b9dacb3640fa83c2cdca2.jpg": {
+    "plat_nomor": "V328FNN",
+    "vehicle_type": "Mobil"
+  },
+  "1f34454c4c073e1b_jpg.rf.51b3784a16f91c427d67f4972ed26c39.jpg": {
+    "plat_nomor": "OU62KBD",
+    "vehicle_type": "Mobil"
+  },
+  "2025-05-24_22-16.png": {
+    "plat_nomor": "L2012HT",
+    "vehicle_type": "Mobil"
+  },
+  "28e26a4eb646c67a_jpg.rf.ebc297ef09ec5a7f8dcb0d0989d793ad.jpg": {
+    "plat_nomor": "FV10UHP",
+    "vehicle_type": "Mobil"
+  },
+  "39c193bcc0c00f9e_jpg.rf.781a5ff666724fcd66548b039c467617.jpg": {
+    "plat_nomor": "CT5B876",
+    "vehicle_type": "Mobil"
+  },
+  "3e2306f2cf4b2c67_jpg.rf.0ecdd619e71bd71e2b12f742672c5229.jpg": {
+    "plat_nomor": "1966YC62",
+    "vehicle_type": "Mobil"
+  },
+  "3feecc5809a29627_jpg.rf.4ca7d27a3985622ef8b265bf7bbcd39c.jpg": {
+    "plat_nomor": "M_VU4688",
+    "vehicle_type": "Mobil"
+  },
+  "43b1b0028dd2db8d_jpg.rf.163eebe0fa7241a2fa3fe53c59813adf.jpg": {
+    "plat_nomor": "BT63UYN",
+    "vehicle_type": "Mobil"
+  },
+  "44afab29f5fa0abf_jpg.rf.189fa2c400a597627c68eb9a0d010e8b.jpg": {
+    "plat_nomor": "T248VEB",
+    "vehicle_type": "Mobil"
+  },
+  "4e593c88022ff6b1_jpg.rf.b6761e5b6e9a54de7368c75df91714e5.jpg": {
+    "plat_nomor": "1128MS",
+    "vehicle_type": "Mobil"
+  },
+  "50c37aeaf19acd5b_jpg.rf.6a6a60ed65b0f96558ecd406377ef6c9.jpg": {
+    "plat_nomor": "BX-2651",
+    "vehicle_type": "Mobil"
+  },
+  "54bd93e5a4de808a_jpg.rf.d3e95629c84e58d0676109ec3ca19f76.jpg": {
+    "plat_nomor": "423-XGY",
+    "vehicle_type": "Mobil"
+  },
+  "5a96f5e1f9be8d42_jpg.rf.1e4bf1c059627c1d842115568aec203b.jpg": {
+    "plat_nomor": "SJB418A",
+    "vehicle_type": "Mobil"
+  },
+  "5daafbcf76fa6602_jpg.rf.14442dd74aa0e629fe892e73fb65e71f.jpg": {
+    "plat_nomor": "AHYEW",
+    "vehicle_type": "Mobil"
+  },
+  "61a69ad713142e45_jpg.rf.788c2385590e08a29253fb003fbcc98d.jpg": {
+    "plat_nomor": "ZFG-2121",
+    "vehicle_type": "Mobil"
+  },
+  "64de505bd2bac82b_jpg.rf.9f33368fad743b9bfe748d39a949493e.jpg": {
+    "plat_nomor": "XIIUME",
+    "vehicle_type": "Mobil"
+  },
+  "6c144e47161867c2_jpg.rf.ec2a50f3926a6f39eb4c39fbec843f9f.jpg": {
+    "plat_nomor": "N326AVE",
+    "vehicle_type": "Mobil"
+  },
+  "74ee6d1b58ae2e70_jpg.rf.1bd30d8bd1c71d1656ca9de97251ad27.jpg": {
+    "plat_nomor": "KAKAO.LV",
+    "vehicle_type": "Mobil"
+  },
+  "7cbc7ee444622a66_jpg.rf.c413df997fe7fc1b53477b73be804506.jpg": {
+    "plat_nomor": "BB8986",
+    "vehicle_type": "Mobil"
+  },
+  "8ceed1ec9bc3ac45_jpg.rf.7dbd6a94b27f469811be78b617890df9.jpg": {
+    "plat_nomor": "DRS507",
+    "vehicle_type": "Mobil"
+  },
+  "9a4fe6361597f264_jpg.rf.54e8f86f1239f5b98911c90550acff79.jpg": {
+    "plat_nomor": "HK06YMX",
+    "vehicle_type": "Mobil"
+  },
+  "9a795bbf4e94d630_jpg.rf.c4e7bd53f92019ae6ed8d5146852676d.jpg": {
+    "plat_nomor": "HF58HXP",
+    "vehicle_type": "Mobil"
+  },
+  "original.jpg": {
+    "plat_nomor": "DK1138EN",
+    "vehicle_type": "Mobil"
+  },
+  "thumb.jpg": {
+    "plat_nomor": "B1895KJG",
     "vehicle_type": "Mobil"
   }
 }

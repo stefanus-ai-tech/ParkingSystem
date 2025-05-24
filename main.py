@@ -258,6 +258,6 @@ if __name__ == "__main__":
             print(f"File 'labels.json' kosong dibuat di {os.path.join(folder, 'labels.json')}")
 
 
-    print(f"Aplikasi akan berjalan. Akses di http://127.0.0.1:8000")
+    print(f"Aplikasi akan berjalan. Akses di http://127.0.0.1:8001")
     print(f"Pastikan file frontend (index.html, style.css, script.js) ada di folder: {static_dir}")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8001)
