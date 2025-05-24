@@ -51,7 +51,8 @@ def process_exit(plat_nomor: str, detected_vehicle_type: str): # Tambahkan detec
 
     exit_time = datetime.datetime.now()
     duration_seconds = (exit_time - entry_time).total_seconds()
-    duration_minutes = int(duration_seconds / 60)
+    # duration_minutes = int(duration_seconds / 60)
+    duration_minutes = int(math.ceil(600))  # Buat debugging lebih mudah, pakai 600 menit
 
     fee = calculate_fee(duration_minutes, vehicle_type_at_entry)
 

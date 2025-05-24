@@ -1,26 +1,17 @@
 {
-    "SJB418A": {
+    "990-XMK": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-24T23:17:08.077457",
-        "exit_time": "2025-05-24T23:17:50.610952",
-        "fee": 5000,
-        "original_plat": "SJB418A",
-        "duration_minutes": 0
+        "entry_time": "2025-05-24T23:39:51.092336",
+        "exit_time": "2025-05-24T23:39:53.609824",
+        "fee": 25000,
+        "original_plat": "990-XMK",
+        "duration_minutes": 610
     },
-    "423-XGY": {
+    "BT63UYN": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-24T23:17:43.685926",
-        "exit_time": "2025-05-24T23:18:21.161676",
-        "fee": 5000,
-        "original_plat": "423-XGY",
-        "duration_minutes": 0
-    },
-    "H2251RB": {
-        "vehicle_type": "Motor",
-        "entry_time": "2025-05-24T23:21:16.925505",
-        "exit_time": "2025-05-24T23:22:02.688457",
-        "fee": 0,
-        "original_plat": "H2251RB",
-        "duration_minutes": 0
+        "entry_time": "2025-05-24T23:41:09.698485",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "BT63UYN"
     }
 }
