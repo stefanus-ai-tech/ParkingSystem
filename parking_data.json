@@ -1,9 +1,34 @@
 {
-    "AUDIZINE": {
+    "T248VEB": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-25T00:25:15.070919",
-        "exit_time": null,
-        "fee": null,
-        "original_plat": "AUDIZINE"
+        "entry_time": "2025-05-25T02:01:23.742881",
+        "exit_time": "2025-05-25T02:02:06.981411",
+        "fee": 23000,
+        "original_plat": "T248VEB",
+        "duration_minutes": 600
+    },
+    "AD2801BV": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-25T02:02:20.345542",
+        "exit_time": "2025-05-25T02:02:27.487439",
+        "fee": 20000,
+        "original_plat": "AD2801BV",
+        "duration_minutes": 600
+    },
+    "AB6628YJ": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-25T02:03:16.086292",
+        "exit_time": "2025-05-25T02:03:18.903871",
+        "fee": 0,
+        "original_plat": "AB6628YJ",
+        "duration_minutes": 0
+    },
+    "423-XGY": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-25T02:03:30.800214",
+        "exit_time": "2025-05-25T02:03:37.953745",
+        "fee": 5000,
+        "original_plat": "423-XGY",
+        "duration_minutes": 0
     }
 }

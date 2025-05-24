@@ -65,7 +65,7 @@ async def analyze_image_with_groq(image_bytes: bytes):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Analisa gambar ini dan identifikasi jenis kendaraan (Mobil atau Motor) dan plat nomornya. "
+                        "text": "Analisa gambar ini dan identifikasi jenis kendaraan (Mobil atau Motor) dan plat nomornya. JANGAN MEMBERIKAN PENJELASAN SAMA SEKALI. "
                                 "Jika plat nomor tidak terbaca jelas atau tidak ada, tulis 'TIDAK_TERDETEKSI'. "
                                 "Jika jenis kendaraan tidak jelas, tulis 'TIDAK_DIKETAHUI'. "
                                 "Format output JSON: {\"Vehicle_Type\": \"<jenis>\", \"Plat_Nomor\": \"<plat>\"}."
