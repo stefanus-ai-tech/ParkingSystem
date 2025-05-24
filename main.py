@@ -44,7 +44,7 @@ except Exception as e:
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
 app.mount("/choosenCar", StaticFiles(directory=LABELED_CAR_DIR), name="choosenCar")
-app.mount("/ChoosenMotorCycle", StaticFiles(directory=LABELED_MOTORCYCLE_DIR), name="ChoosenMotorCycle")
+app.mount("/choosenMotorCycle", StaticFiles(directory=LABELED_MOTORCYCLE_DIR), name="choosenMotorCycle")
 
 
 # --- Helper Groq ---

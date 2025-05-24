@@ -4,7 +4,7 @@ from difflib import SequenceMatcher
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LABELED_CAR_DIR = os.path.join(BASE_DIR, "choosenCar")
-LABELED_MOTORCYCLE_DIR = os.path.join(BASE_DIR, "ChoosenMotorCycle")
+LABELED_MOTORCYCLE_DIR = os.path.join(BASE_DIR, "choosenMotorCycle")
 
 def load_labels(directory):
     labels_path = os.path.join(directory, "labels.json")
@@ -28,7 +28,7 @@ def get_labeled_image_paths():
     Mengembalikan daftar path relatif untuk gambar yang dilabeli.
     """
     car_images = [os.path.join("choosenCar", f) for f in CAR_LABELS.keys()]
-    motorcycle_images = [os.path.join("ChoosenMotorCycle", f) for f in MOTORCYCLE_LABELS.keys()]
+    motorcycle_images = [os.path.join("choosenMotorCycle", f) for f in MOTORCYCLE_LABELS.keys()]
     return car_images + motorcycle_images
 
 
