@@ -1,6 +1,7 @@
 import os
 import json
 import base64
+import time # <--- Add this import
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -55,9 +56,8 @@ async def analyze_image_with_groq(image_bytes: bytes):
     # Encode image to base64
     encoded_image = base64.b64encode(image_bytes).decode('utf-8')
     
-    # Pastikan ukuran gambar tidak terlalu besar (Groq mungkin punya limit)
-    # Di sini kita asumsikan gambar sudah dalam format yang diterima (JPEG, PNG)
-    
+    start_time = time.time() # <--- Record start time
+
     chat_completion = groq_client.chat.completions.create(
         messages=[
             {
@@ -65,7 +65,7 @@ async def analyze_image_with_groq(image_bytes: bytes):
                 "content": [
                     {
                         "type": "text",
-                        "text": "Analisa gambar ini dan identifikasi jenis kendaraan (Mobil atau Motor) dan plat nomornya. TANPA PENJELASAN APAPUN SELAIN OUTPUT JSON "
+                        "text": "Analisa gambar ini dan identifikasi jenis kendaraan (Mobil atau Motor) dan plat nomornya. "
                                 "Jika plat nomor tidak terbaca jelas atau tidak ada, tulis 'TIDAK_TERDETEKSI'. "
                                 "Jika jenis kendaraan tidak jelas, tulis 'TIDAK_DIKETAHUI'. "
                                 "Format output JSON: {\"Vehicle_Type\": \"<jenis>\", \"Plat_Nomor\": \"<plat>\"}."
@@ -74,20 +74,22 @@ async def analyze_image_with_groq(image_bytes: bytes):
                     {
                         "type": "image_url",
                         "image_url": {
-                             "url": f"data:image/jpeg;base64,{encoded_image}" # Asumsi JPEG, bisa juga PNG
+                             "url": f"data:image/jpeg;base64,{encoded_image}"
                         }
                     }
                 ]
             }
         ],
-        model="meta-llama/llama-4-scout-17b-16e-instruct", # Ganti dengan model vision yang sesuai jika ada perubahan nama
-        temperature=0.1, # Rendah untuk hasil lebih deterministik
+        model="meta-llama/llama-4-scout-17b-16e-instruct",
+        temperature=0.1,
         max_tokens=150,
-        # response_format={"type": "json_object"} # Jika model mendukung JSON mode
     )
     
+    end_time = time.time() # <--- Record end time
+    inference_time_seconds = round(end_time - start_time, 3) # <--- Calculate duration
+
     response_content = chat_completion.choices[0].message.content
-    print(f"Raw Groq Response: {response_content}") # Untuk debugging
+    # print(f"Raw Groq Response: {response_content}") 
     try:
         # Mencoba membersihkan dan parsing JSON
         # Llama Vision mungkin tidak selalu menghasilkan JSON yang sempurna, perlu pre-processing
@@ -101,13 +103,20 @@ async def analyze_image_with_groq(image_bytes: bytes):
         plat = data.get("Plat_Nomor", "TIDAK_TERDETEKSI").upper().replace(" ", "")
         tipe = data.get("Vehicle_Type", "TIDAK_DIKETAHUI").capitalize()
         if tipe not in ["Mobil", "Motor"]:
-            tipe = "TIDAK_DIKETAHUI" # Paksa ke kategori yang diketahui atau tidak diketahui
+            tipe = "TIDAK_DIKETAHUI"
 
-        return {"Vehicle_Type": tipe, "Plat_Nomor": plat}
+        return {
+            "Vehicle_Type": tipe, 
+            "Plat_Nomor": plat,
+            "inference_time_seconds": inference_time_seconds # <--- Include inference time
+        }
     except (json.JSONDecodeError, AttributeError, IndexError) as e:
         print(f"Error parsing Groq JSON response: {e}, Content: {response_content}")
-        # Fallback jika JSON tidak valid
-        return {"Vehicle_Type": "ERROR_PARSING", "Plat_Nomor": "ERROR_PARSING"}
+        return {
+            "Vehicle_Type": "ERROR_PARSING", 
+            "Plat_Nomor": "ERROR_PARSING",
+            "inference_time_seconds": inference_time_seconds # <--- Still return time even on parse error
+        }
 
 
 # --- API Endpoints ---
@@ -164,33 +173,34 @@ async def process_image_endpoint(
     else:
         raise HTTPException(status_code=400, detail="Tidak ada gambar yang diunggah atau dipilih.")
 
-    # Analisa dengan Groq
+    groq_analysis_result = None # Initialize
     try:
-        groq_result = await analyze_image_with_groq(image_bytes)
-    except HTTPException as e: # Tangkap HTTPException dari analyze_image_with_groq
+        groq_analysis_result = await analyze_image_with_groq(image_bytes) # <--- Store the whole result
+    except HTTPException as e: 
         return JSONResponse(status_code=e.status_code, content={"status": "error", "message": e.detail})
     except Exception as e:
         print(f"Error saat analisa Groq: {e}")
         return JSONResponse(status_code=500, content={"status": "error", "message": f"Gagal menganalisa gambar dengan Groq: {str(e)}"})
 
-    if groq_result["Vehicle_Type"] == "ERROR_PARSING" or groq_result["Plat_Nomor"] == "ERROR_PARSING":
+    # The groq_analysis_result now contains Vehicle_Type, Plat_Nomor, and inference_time_seconds
+    # print(f"Groq Analysis Result: {groq_analysis_result}") # For debugging
+
+    if groq_analysis_result["Vehicle_Type"] == "ERROR_PARSING" or groq_analysis_result["Plat_Nomor"] == "ERROR_PARSING":
         return JSONResponse(status_code=500, content={
             "status": "error", 
             "message": "Gagal memparsing hasil dari Groq.",
-            "groq_raw_output": "Tidak tersedia jika parsing gagal total di analyze_image_with_groq" 
-            # Jika ingin menampilkan raw output Groq, modifikasi analyze_image_with_groq untuk mengembalikannya
+            "groq_result": groq_analysis_result # Send the result which includes time
         })
     
-    if groq_result["Plat_Nomor"] == "TIDAK_TERDETEKSI" or groq_result["Vehicle_Type"] == "TIDAK_DIKETAHUI":
+    if groq_analysis_result["Plat_Nomor"] == "TIDAK_TERDETEKSI" or groq_analysis_result["Vehicle_Type"] == "TIDAK_DIKETAHUI":
          return JSONResponse(status_code=400, content={
             "status": "error", 
             "message": "Plat nomor atau jenis kendaraan tidak dapat dideteksi oleh Groq.",
-            "groq_result": groq_result
+            "groq_result": groq_analysis_result # Send the result which includes time
         })
 
-
-    plat_nomor = groq_result["Plat_Nomor"]
-    vehicle_type = groq_result["Vehicle_Type"]
+    plat_nomor = groq_analysis_result["Plat_Nomor"]
+    vehicle_type = groq_analysis_result["Vehicle_Type"]
 
     # Proses berdasarkan action_type
     if action_type == "in":
@@ -214,7 +224,14 @@ async def process_image_endpoint(
 
 
     # Gabungkan hasil proses dengan info Groq dan akurasi
-    final_response = {**result, "groq_result": groq_result}
+    final_response = {
+        **result, 
+        "groq_result": { # Nest Groq specific results under groq_result key
+            "Plat_Nomor": plat_nomor,
+            "Vehicle_Type": vehicle_type,
+            "inference_time_seconds": groq_analysis_result.get("inference_time_seconds") # Add it here
+        }
+    }
     if accuracy_info:
         final_response["accuracy_info"] = accuracy_info
     

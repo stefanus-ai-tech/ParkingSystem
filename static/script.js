@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const typeAccuracySpan = document.getElementById("typeAccuracy");
   const overallAccuracySpan = document.getElementById("overallAccuracy");
   const accuracyMessageSpan = document.getElementById("accuracyMessage");
+  const inferenceTimeSpan = document.getElementById("inferenceTime"); // <--- Get the new span
 
   const currentParkingTableBody = document.querySelector(
     "#currentParkingTable tbody"
@@ -31,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let selectedFile = null;
 
-  // Load labeled images for selection
   async function loadLabeledImages() {
     try {
       const response = await fetch("/labeled_images");
@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
       data.images.forEach((imgPath) => {
         const option = document.createElement("option");
-        option.value = imgPath; // e.g., choosenCar/car1.jpg
-        option.textContent = imgPath.split("/").pop(); // e.g., car1.jpg
+        option.value = imgPath;
+        option.textContent = imgPath.split("/").pop();
         labeledImageSelect.appendChild(option);
       });
     } catch (error) {
@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   labeledImageSelect.addEventListener("change", () => {
     if (labeledImageSelect.value !== "none") {
-      imagePreview.src = `/${labeledImageSelect.value}`; // Prepend / to make it root relative
+      imagePreview.src = `/${labeledImageSelect.value}`;
       imagePreview.style.display = "block";
-      selectedFile = null; // Clear any manually uploaded file
-      imageUpload.value = ""; // Clear file input
+      selectedFile = null;
+      imageUpload.value = "";
       fileUploadText.textContent =
         "Pilih File Gambar Baru... (Gambar terlabel dipilih)";
     } else {
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         imagePreview.style.display = "block";
       };
       reader.readAsDataURL(selectedFile);
-      labeledImageSelect.value = "none"; // Deselect labeled image if new one is uploaded
+      labeledImageSelect.value = "none";
       fileUploadText.textContent = selectedFile.name;
     } else {
       imagePreview.style.display = "none";
@@ -113,36 +113,41 @@ document.addEventListener("DOMContentLoaded", () => {
         body: formData,
       });
 
-      const result = await response.json();
+      const result = await response.json(); // This is the final_response from backend
 
       if (!response.ok) {
-        // HTTP errors like 400, 404, 500
         setStatusMessage(
           `Error: ${
             result.detail || result.message || "Terjadi kesalahan server."
           }`,
           "error"
         );
-        if (result.groq_result) displayGroqResult(result.groq_result); // Show Groq if available
+        // Even on error, Groq result might contain inference time if the error happened after Groq call
+        if (
+          result.groq_result &&
+          result.groq_result.inference_time_seconds !== undefined
+        ) {
+          displayGroqResult(result.groq_result); // displayGroqResult will now also handle inference time
+        }
         return;
       }
 
-      // Handle application-level success/error from our backend logic
       if (result.status === "success") {
         setStatusMessage(result.message, "success");
       } else {
         setStatusMessage(result.message || "Gagal memproses.", "error");
       }
 
+      // result.groq_result is where Plat_Nomor, Vehicle_Type, and inference_time_seconds are
       if (result.groq_result) {
-        displayGroqResult(result.groq_result);
+        displayGroqResult(result.groq_result); // Pass the whole groq_result object
       }
 
       if (result.accuracy_info) {
         displayAccuracyResult(result.accuracy_info);
       }
 
-      fetchParkingData(); // Refresh tables
+      fetchParkingData();
     } catch (error) {
       console.error("Error processing vehicle:", error);
       setStatusMessage(`Terjadi kesalahan: ${error.message}`, "error");
@@ -151,23 +156,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function setStatusMessage(message, type) {
     statusMessageDiv.textContent = message;
-    statusMessageDiv.className = `status-message ${type}`; // 'success', 'error', 'loading'
+    statusMessageDiv.className = `status-message ${type}`;
   }
 
   function hideResults() {
     groqResultDiv.style.display = "none";
     accuracyResultDiv.style.display = "none";
+    inferenceTimeSpan.textContent = "N/A"; // Reset inference time on hide
   }
 
-  function displayGroqResult(data) {
-    groqPlatSpan.textContent = data.Plat_Nomor || "N/A";
-    groqTypeSpan.textContent = data.Vehicle_Type || "N/A";
-    groqResultDiv.style.display = "block";
+  // Modified to handle inference time
+  function displayGroqResult(groqData) {
+    // groqData is now an object {Plat_Nomor, Vehicle_Type, inference_time_seconds}
+    groqPlatSpan.textContent = groqData.Plat_Nomor || "N/A";
+    groqTypeSpan.textContent = groqData.Vehicle_Type || "N/A";
+
+    // Display inference time if available
+    if (groqData.inference_time_seconds !== undefined) {
+      inferenceTimeSpan.textContent = `${groqData.inference_time_seconds} detik`;
+    } else {
+      inferenceTimeSpan.textContent = "N/A";
+    }
+    // Make sure the accuracyResultDiv is shown if we are showing inference time
+    // Assuming inference time is part of the "accuracy" display block.
+    // If it's in groqResultDiv, then show that one.
+    // Based on your HTML, it's in accuracyResultDiv
+    accuracyResultDiv.style.display = "block"; // Or groqResultDiv if it's there
+    groqResultDiv.style.display = "block"; // Show Groq specific details
   }
 
   function displayAccuracyResult(data) {
     if (data.message && !data.true_plate) {
-      // If only a message (e.g. label not found)
       accuracyMessageSpan.textContent = data.message;
       plateAccuracySpan.textContent = "N/A";
       typeAccuracySpan.textContent = "N/A";
@@ -180,17 +199,19 @@ document.addEventListener("DOMContentLoaded", () => {
       plateAccuracySpan.textContent =
         data.plate_accuracy !== undefined
           ? data.plate_accuracy.toFixed(2)
-          : "N/A";
+          : "N/A"; // Removed % here, add in HTML if needed
       typeAccuracySpan.textContent =
         data.type_accuracy !== undefined
           ? data.type_accuracy.toFixed(2)
-          : "N/A";
+          : "N/A"; // Removed % here
       overallAccuracySpan.textContent =
         data.overall_accuracy !== undefined
           ? data.overall_accuracy.toFixed(2)
-          : "N/A";
-      accuracyMessageSpan.textContent = ""; // Clear message if full data is present
+          : "N/A"; // Removed % here
+      accuracyMessageSpan.textContent = "";
     }
+    // Inference time is now handled by displayGroqResult,
+    // but we still need to show the accuracyResultDiv if accuracy data is present.
     accuracyResultDiv.style.display = "block";
   }
 
@@ -204,10 +225,9 @@ document.addEventListener("DOMContentLoaded", () => {
       parkingHistoryTableBody.innerHTML = "";
 
       Object.values(data).forEach((vehicle) => {
-        const originalPlat = vehicle.original_plat || vehicle.plat_nomor; // Use original if available
+        const originalPlat = vehicle.original_plat || vehicle.plat_nomor;
 
         if (vehicle.exit_time === null) {
-          // Currently parked
           const row = currentParkingTableBody.insertRow();
           row.insertCell().textContent = originalPlat;
           row.insertCell().textContent = vehicle.vehicle_type;
@@ -215,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ? new Date(vehicle.entry_time).toLocaleString()
             : "N/A";
         } else {
-          // Exited
           const row = parkingHistoryTableBody.insertRow();
           row.insertCell().textContent = originalPlat;
           row.insertCell().textContent = vehicle.vehicle_type;
