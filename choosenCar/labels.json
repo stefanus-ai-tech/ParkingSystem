@@ -8,7 +8,7 @@
     "vehicle_type": "Mobil"
   },
   "car11.jpg": {
-    "plat_nomor": "M_VU4688",
+    "plat_nomor": "MVU4688",
     "vehicle_type": "Mobil"
   },
   "car12.jpg": {
@@ -24,7 +24,7 @@
     "vehicle_type": "Mobil"
   },
   "car15.jpg": {
-    "plat_nomor": "BX-2651",
+    "plat_nomor": "BX-253-YC",
     "vehicle_type": "Mobil"
   },
   "car16.jpg": {
@@ -52,11 +52,15 @@
     "vehicle_type": "Mobil"
   },
   "car21.jpg": {
-    "plat_nomor": "N326AVE",
+    "plat_nomor": "W326AVE",
     "vehicle_type": "Mobil"
   },
   "car22.jpg": {
     "plat_nomor": "KAKAO.LV",
+    "vehicle_type": "Mobil"
+  },
+  "car24.jpg": {
+    "plat_nomor": "AUDIZINE",
     "vehicle_type": "Mobil"
   },
   "car23.jpg": {
@@ -80,7 +84,7 @@
     "vehicle_type": "Mobil"
   },
   "car29.jpg": {
-    "plat_nomor": "B1895KJG",
+    "plat_nomor": "B1805KJG",
     "vehicle_type": "Mobil"
   },
   "car3.jpg": {
