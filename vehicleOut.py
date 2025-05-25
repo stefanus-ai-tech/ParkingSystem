@@ -18,8 +18,12 @@ def calculate_fee(minutes: int, vehicle_type: str):
             additional_hours = math.ceil((minutes - 60) / 60)
             return 5000 + additional_hours * 2000
     elif vehicle_type == "Motor":
-        # Rp 2.000 per jam, pembulatan ke atas
-        return math.ceil(minutes / 60) * 2000
+        if minutes <= 60:
+            return 2000
+        else: 
+            # 2000 untuk jam pertama + (ceil((total_menit - 60) / 60) * 2000) untuk jam berikutnya
+            additional_hours = math.ceil((minutes - 60) / 60)
+            return 2000 + additional_hours * 2000
     return 0
 
 def process_exit(plat_nomor: str, detected_vehicle_type: str): # Tambahkan detected_vehicle_type
@@ -51,8 +55,8 @@ def process_exit(plat_nomor: str, detected_vehicle_type: str): # Tambahkan detec
 
     exit_time = datetime.datetime.now()
     duration_seconds = (exit_time - entry_time).total_seconds()
-    duration_minutes = int(duration_seconds / 60)
-    #duration_minutes = int(math.ceil(600))  # Buat debugging lebih mudah, pakai 600 menit
+    # duration_minutes = int(duration_seconds / 60)
+    duration_minutes = int(math.ceil(600))  # Buat debugging lebih mudah, pakai 600 menit
 
     fee = calculate_fee(duration_minutes, vehicle_type_at_entry)
 

@@ -30,5 +30,29 @@
         "fee": 5000,
         "original_plat": "423-XGY",
         "duration_minutes": 0
+    },
+    "H2180LK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-25T23:08:12.682011",
+        "exit_time": "2025-05-25T23:08:18.190024",
+        "fee": 2000,
+        "original_plat": "H2180LK",
+        "duration_minutes": 0
+    },
+    "AD6394ASD": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-25T23:09:42.162676",
+        "exit_time": "2025-05-25T23:09:44.644956",
+        "fee": 20000,
+        "original_plat": "AD6394ASD",
+        "duration_minutes": 600
+    },
+    "M-PX-9357": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-25T23:10:02.558576",
+        "exit_time": "2025-05-25T23:10:05.925021",
+        "fee": 23000,
+        "original_plat": "M-PX-9357",
+        "duration_minutes": 600
     }
 }
