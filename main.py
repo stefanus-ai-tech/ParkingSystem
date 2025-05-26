@@ -1,7 +1,7 @@
 import os
 import json
 import base64
-import time # <--- Add this import
+import time 
 from fastapi import FastAPI, File, UploadFile, Form, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -234,6 +234,8 @@ async def process_image_endpoint(
     }
     if accuracy_info:
         final_response["accuracy_info"] = accuracy_info
+    
+    # print(f"Final Response: {final_response}") # Debugging output
     
     return JSONResponse(content=final_response)
 
