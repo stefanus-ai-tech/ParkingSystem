@@ -1,100 +1,422 @@
 {
     "BN1964PQ": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:21:12.885432",
+        "entry_time": "2025-05-27T19:33:54.803211",
         "exit_time": null,
         "fee": null,
         "original_plat": "BN1964PQ"
     },
+    "B1445SSV": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:35:32.240186",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "B1445SSV"
+    },
     "H7808FG": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:22:33.318137",
+        "entry_time": "2025-05-27T19:36:07.062300",
         "exit_time": null,
         "fee": null,
         "original_plat": "H7808FG"
     },
     "L1535": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:23:33.304618",
+        "entry_time": "2025-05-27T19:36:36.492448",
         "exit_time": null,
         "fee": null,
         "original_plat": "L1535"
     },
+    "DK312TV": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:38:03.281335",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DK312TV"
+    },
+    "DK924ED": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:39:36.243181",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DK924ED"
+    },
+    "B2454TZE": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:40:26.865576",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "B2454TZE"
+    },
+    "DB17E": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:41:02.172401",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DB17E"
+    },
+    "P1151EP": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:41:52.013721",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "P1151EP"
+    },
+    "DK1303F": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:42:47.805142",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DK1303F"
+    },
+    "DK1109F": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:43:27.255290",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DK1109F"
+    },
     "BN1146VP": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:23:57.231585",
+        "entry_time": "2025-05-27T19:44:07.405876",
         "exit_time": null,
         "fee": null,
         "original_plat": "BN1146VP"
     },
-    "BN8417TY": {
-        "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:25:48.084925",
-        "exit_time": null,
-        "fee": null,
-        "original_plat": "BN8417TY"
-    },
-    "BK1854TB": {
-        "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:26:44.274605",
-        "exit_time": null,
-        "fee": null,
-        "original_plat": "BK1854TB"
-    },
-    "B1726PVA": {
-        "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:28:09.223831",
-        "exit_time": null,
-        "fee": null,
-        "original_plat": "B1726PVA"
-    },
-    "BN1402PP": {
-        "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:29:05.612471",
-        "exit_time": null,
-        "fee": null,
-        "original_plat": "BN1402PP"
-    },
     "BN1703AM": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:29:22.011813",
+        "entry_time": "2025-05-27T19:44:32.653194",
         "exit_time": null,
         "fee": null,
         "original_plat": "BN1703AM"
     },
+    "DK386QZ": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:44:57.794241",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DK386QZ"
+    },
+    "DK1801AT": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:45:28.981030",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DK1801AT"
+    },
     "BN1034AW": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:30:14.845671",
+        "entry_time": "2025-05-27T19:45:59.391396",
         "exit_time": null,
         "fee": null,
         "original_plat": "BN1034AW"
     },
+    "DA1401CE": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:46:45.820007",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DA1401CE"
+    },
+    "DK877CI": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:47:15.226061",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "DK877CI"
+    },
+    "B1767NJ": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:47:42.862394",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "B1767NJ"
+    },
+    "B2252BZU": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:48:12.494114",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "B2252BZU"
+    },
+    "B1569CZB": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:48:38.513077",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "B1569CZB"
+    },
+    "B304AKR": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:49:20.322676",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "B304AKR"
+    },
+    "BN8417TY": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:50:13.486276",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "BN8417TY"
+    },
+    "B2328KKL": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:50:49.160044",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "B2328KKL"
+    },
+    "BK1854TB": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:51:19.326104",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "BK1854TB"
+    },
+    "BN1402PP": {
+        "vehicle_type": "Mobil",
+        "entry_time": "2025-05-27T19:52:15.478404",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "BN1402PP"
+    },
     "BN1630VB": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:32:56.170787",
+        "entry_time": "2025-05-27T19:52:42.529240",
         "exit_time": null,
         "fee": null,
         "original_plat": "BN1630VB"
     },
     "B1787DFD": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:35:22.025435",
+        "entry_time": "2025-05-27T19:53:06.035140",
         "exit_time": null,
         "fee": null,
         "original_plat": "B1787DFD"
     },
-    "B1787DFO": {
+    "DK1259F": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:34:48.777136",
+        "entry_time": "2025-05-27T19:53:35.162387",
         "exit_time": null,
         "fee": null,
-        "original_plat": "B1787DFO"
+        "original_plat": "DK1259F"
     },
-    "B1445SSV": {
+    "L12UL": {
         "vehicle_type": "Mobil",
-        "entry_time": "2025-05-26T00:35:45.530517",
+        "entry_time": "2025-05-27T19:54:12.834617",
         "exit_time": null,
         "fee": null,
-        "original_plat": "B1445SSV"
+        "original_plat": "L12UL"
+    },
+    "H5452JV": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T19:54:52.269710",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5452JV"
+    },
+    "H5478MK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T19:55:21.844367",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5478MK"
+    },
+    "H5492RC": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T19:56:17.010746",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5492RC"
+    },
+    "H5498QC": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T19:56:48.214856",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5498QC"
+    },
+    "H5508ACC": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T19:57:52.201310",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5508ACC"
+    },
+    "H5602CV": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T19:59:31.545738",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5602CV"
+    },
+    "H5606CI": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:00:02.370599",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5606CI"
+    },
+    "H5683PK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:00:33.160735",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5683PK"
+    },
+    "H5690BB": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:01:06.641516",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5690BB"
+    },
+    "H5824JK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:01:41.813555",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5824JK"
+    },
+    "H6256AWC": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:02:26.820517",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6256AWC"
+    },
+    "H6256OK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:02:59.375775",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6256OK"
+    },
+    "H6399ANC": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:03:41.784597",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6399ANC"
+    },
+    "H6542JI": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:04:15.175662",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6542JI"
+    },
+    "H5907II": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:04:54.844835",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5907II"
+    },
+    "H6602HK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:07:02.390439",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6602HK"
+    },
+    "H6629CV": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:07:33.139578",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6629CV"
+    },
+    "H6656UB": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:08:00.922643",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6656UB"
+    },
+    "H6713AAC": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:08:26.212587",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6713AAC"
+    },
+    "H6832CV": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:09:05.397760",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6832CV"
+    },
+    "H6943LV": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:09:34.821842",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6943LV"
+    },
+    "H6954DK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:09:59.739548",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6954DK"
+    },
+    "H6110YD": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:10:26.277596",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6110YD"
+    },
+    "H6998ZL": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:10:50.114788",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6998ZL"
+    },
+    "H6132YG": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:11:22.788136",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6132YG"
+    },
+    "H2306AK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:12:05.564932",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H2306AK"
+    },
+    "H5671OL": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:12:31.175890",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5671OL"
+    },
+    "H5720BC": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:12:59.903119",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H5720BC"
+    },
+    "H6170OK": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:13:29.932695",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6170OK"
+    },
+    "H6199BU": {
+        "vehicle_type": "Motor",
+        "entry_time": "2025-05-27T20:14:06.244800",
+        "exit_time": null,
+        "fee": null,
+        "original_plat": "H6199BU"
     }
 }
