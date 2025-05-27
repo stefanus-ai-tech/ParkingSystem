@@ -11,7 +11,7 @@ import io
 load_dotenv()
 
 # --- Configuration ---
-TARGET_DIRS = ["choosenCar"] # Directories to process
+TARGET_DIRS = ["choosenCar", "choosenMotorCycle"] # Directories to process
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ALLOWED_EXTENSIONS = {'.png', '.jpg', '.jpeg', '.gif', '.bmp'}
 API_CALL_DELAY_SECONDS = 2 # Delay between Groq API calls to avoid rate limits
